@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react';
-
 const DataFilter = () => {
     const [data, setData] = useState([]);
     const [search, setSearch] = useState('');
@@ -17,7 +15,14 @@ const DataFilter = () => {
         fetchData();
     }, []);
 
-    return <div>Data Filter Component</div>;
+    return (
+        <div>
+            <input
+                type="text"
+                placeholder="Search..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+            />
+        </div>
+    );
 };
-
-export default DataFilter;
